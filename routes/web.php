@@ -21,4 +21,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::post('/books', [\App\Http\Controllers\BooksController::class, 'store']);
+Route::patch('/books/{book}', [\App\Http\Controllers\BooksController::class, 'update']);
+
+
 require __DIR__.'/auth.php';
