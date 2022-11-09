@@ -23,6 +23,9 @@ Route::get('/dashboard', function () {
 
 Route::post('/books', [\App\Http\Controllers\BooksController::class, 'store']);
 Route::patch('/books/{book}', [\App\Http\Controllers\BooksController::class, 'update']);
+Route::delete('/books/{book}', [\App\Http\Controllers\BooksController::class, 'destroy']);
 
+
+Route::post('author', [\App\Http\Controllers\AuthController::class, 'store']);
 
 require __DIR__.'/auth.php';
