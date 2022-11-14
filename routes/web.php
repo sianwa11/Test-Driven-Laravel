@@ -26,6 +26,10 @@ Route::patch('/books/{book}', [\App\Http\Controllers\BooksController::class, 'up
 Route::delete('/books/{book}', [\App\Http\Controllers\BooksController::class, 'destroy']);
 
 
-Route::post('author', [\App\Http\Controllers\AuthController::class, 'store']);
+Route::post('authors', [\App\Http\Controllers\AuthController::class, 'store']);
+
+Route::post('/checkout/{book}', [\App\Http\Controllers\CheckoutBookController::class, 'store']);
+Route::post('/checkin/{book}', [\App\Http\Controllers\CheckinController::class, 'store']);
+
 
 require __DIR__.'/auth.php';

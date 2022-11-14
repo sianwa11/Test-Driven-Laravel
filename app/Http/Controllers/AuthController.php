@@ -9,10 +9,14 @@ class AuthController extends Controller
 {
     public function store()
     {
-        Author::create(\request()->only(['name', 'dob']));
+
+        Author::create($this->validateRequest());
     }
 
     public function validateRequest() {
-        \request()->validate([]);
+        return \request()->validate([
+            'name' => 'required',
+            'dob' => 'required'
+        ]);
     }
 }
